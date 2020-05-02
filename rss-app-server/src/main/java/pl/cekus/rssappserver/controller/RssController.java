@@ -36,7 +36,7 @@ class RssController {
         return rssService.add(rss);
     }
 
-    @PostMapping("/send")
+    @GetMapping("/send")
     void send() {
         sendGridService.sendMail();
     }

@@ -21,15 +21,11 @@ export class RssService {
     return this.http.get<Content>(this.baseUrl + 'content');
   }
 
-  getRssById(rssId: number): Observable<Rss> {
-    return this.http.get<Rss>(this.baseUrl + rssId);
-  }
-
   addRss(rss: Rss): Observable<Rss> {
     return this.http.post<Rss>(this.baseUrl, JSON.stringify(rss));
   }
 
-  deleteRss(rssId: number) {
-    return this.http.delete(this.baseUrl + rssId);
+  send(): Observable<void> {
+    return this.http.get<void>(this.baseUrl + 'send');
   }
 }

@@ -23,9 +23,9 @@ export class RegisterComponent implements OnInit {
   }
 
   handleRegister() {
-    this.registerService.addUser(new User(this.username, this.password, this.passwordConfirm, this.email)).subscribe(() => {
+    this.registerService.addUser(new User(this.username, this.password, this.passwordConfirm, this.email)).subscribe(data => {
       this.registerSuccess = true;
-      this.successMessage = 'Register Successful.';
+      this.successMessage = 'Register Successful: ' + data;
     });
   }
 }

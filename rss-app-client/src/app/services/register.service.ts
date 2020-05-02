@@ -12,7 +12,7 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl + 'register', user);
+  addUser(user: User): Observable<string> {
+    return this.http.post<string>(this.baseUrl + 'register', user);
   }
 }
